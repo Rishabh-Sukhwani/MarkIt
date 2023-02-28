@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <textArea id="inputTextArea" ></textArea>
+    <div id="outputDiv"></div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        var socket = io();
+        var outputDiv = document.getElementById('outputDiv');
+
+        document.getElementById('inputTextArea').addEventListener('input', function() {
+            var inputText = this.value;
+            var outputText = inputText.replace(/\n/g, '<br>');
+            outputDiv.innerHTML = '<pre>' + outputText + '</pre>';
+            socket.emit('input', inputText);
+        });
+
+        socket.on('output', function(data) {
+            var outputText = data.replace(/\n/g, '<br>');
+            outputDiv.innerHTML += '<br>';
+            outputDiv.scrollTop = outputDiv.scrollHeight;
+        });
+
+        socket.on('clear', function() {
+            document.getElementById('inputTextArea').value = "";
+        })
+
+    </script>
+
+</body>
+</html>
