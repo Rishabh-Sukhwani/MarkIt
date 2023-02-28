@@ -18,7 +18,8 @@
         document.getElementById('inputTextArea').addEventListener('input', function() {
             var inputText = this.value;
             var outputText = inputText.replace(/\n/g, '<br>');
-            outputDiv.innerHTML = '<pre>' + outputText + '</pre>';
+            //outputText = run(outputText);
+            outputDiv.innerHTML = '<pre>' + "" + '</pre>';
             socket.emit('input', inputText);
         });
 
