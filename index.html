@@ -24,7 +24,7 @@
 
         socket.on('output', function(data) {
             var outputText = data.replace(/\n/g, '<br>');
-            outputDiv.innerHTML += '<br>';
+            outputDiv.innerHTML += '<pre>' + outputText + '</pre>';
             outputDiv.scrollTop = outputDiv.scrollHeight;
         });
 

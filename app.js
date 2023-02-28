@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const http = require('http').Server(app);
 const io = require('socket.io')(http);
+const { run } = require('./services/parse');
 
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/index.html');
@@ -14,7 +15,9 @@ io.on('connection', (socket) => {
 
     socket.on('input', (data) => {
         console.log('input: ' + data);
-        io.emit('output', data);
+        html = run(data)
+        console.log('html: ' + html);
+        io.emit('output', html);
     });
 
     socket.on('disconnect', () => {
