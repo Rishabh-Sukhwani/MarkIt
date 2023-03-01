@@ -1,15 +1,44 @@
+* {
+    
+    margin: 0;
+    padding: 0;
+}
+
+.body {
+    background-color: #D9D9D9;
+}
+
 .main {
     display: flex;
+    margin: 20px 20px;
+}
+
+.title {
+    background-color: #1E1E1E;
+    height: auto;
+}
+
+.title--heading {
+    font-family: 'Inter', sans-serif;
+    color: #D9D9D9;
+    font-size: 2.25rem;
+    text-align: center;
 }
 
 #inputTextArea {
     width: 50%;
-    height: 42rem;
+    height: 41rem;
     resize: none;
+    border: 0;
+    border-radius: 5px;
 }
 
 #outputDiv {
     padding-left: 20px;
+    margin-left: 20px;
     width: 50%;
-    height: 100%;
+    height: 41rem;
+    border: 0;
+    border-radius: 5px;
+    background-color: #FFFFFF;
 }
