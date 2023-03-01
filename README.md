@@ -1,6 +1,6 @@
 # MarkIt
 
-![Demo gif](https://github.com/Rishabh-Sukhwani/MarkIt/tree/main/images/animation.gif?raw=true)
+![Demo gif](https://github.com/Rishabh-Sukhwani/MarkIt/blob/main/images/animation.gif?raw=true)
 
 MarkIt is a realtime markdown editor built using NodeJS, SocketIO and ShowdownJS.
 
