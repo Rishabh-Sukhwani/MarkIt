@@ -4,6 +4,8 @@ const http = require('http').Server(app);
 const io = require('socket.io')(http);
 const { run } = require('./services/parse');
 
+app.use(express.static('public'))
+
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/index.html');
 });

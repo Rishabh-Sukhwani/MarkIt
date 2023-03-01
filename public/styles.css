@@ -1,0 +1,15 @@
+.main {
+    display: flex;
+}
+
+#inputTextArea {
+    width: 50%;
+    height: 42rem;
+    resize: none;
+}
+
+#outputDiv {
+    padding-left: 20px;
+    width: 50%;
+    height: 100%;
+}
